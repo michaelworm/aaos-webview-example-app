@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     private WebView webView;
     private static final String CONNECT_STORE_URL = "https://connect-store2.porsche.com/de/de/landauswahl/t/countrySelector";
 
-    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         configureWebView();
     }
 
-    private void configureWebView () {
+    @SuppressLint("SetJavaScriptEnabled")
+    private void configureWebView() {
         webView = findViewById(R.id.webview);
         WebSettings webSettings = webView.getSettings();
         webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
